@@ -1,0 +1,18 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ${project.artifactId}
+  annotations:
+    app.openshift.io/connects-to: fruit-service
+  labels:
+    app.kubernetes.io/part-of: fruit-service-app
+    app.openshift.io/runtime: spring-boot
+spec:
+  template:
+    spec:
+      containers:
+        - name: service
+          envFrom:
+          - configMapRef:
+              name: ${project.artifactId}-configmap
+          

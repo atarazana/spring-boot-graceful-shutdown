@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ${project.artifactId}-configmap
+data:
+  java-options: "-Dspring.profiles.active=${profile.name}"
+  JAVA_OPTIONS: "-Dspring.profiles.active=${profile.name}"
+  CONNECT_TIMEOUT: 30000
+  REQUEST_TIMEOUT: 30000
+  SOCKET_TIMEOUT: 60000
+  MAX_TOTAL_CONNECTIONS: 50
+  DEFAULT_KEEP_ALIVE_TIME_MILLIS: 20000
+  CLOSE_IDLE_CONNECTION_WAIT_TIME_SECS: 30

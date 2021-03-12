@@ -1,0 +1,17 @@
+server:
+  port : 8081
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: fruits_get_route
+        uri: http://localhost:8080
+        predicates:
+        - Path=/api/fruits , /api/fruits/{segment} , /setup/delay/{segment}
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

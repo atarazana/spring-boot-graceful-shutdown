@@ -1,0 +1,17 @@
+# IntelliJ
+.idea
+*.iml
+
+# Eclipse
+.metadata
+.settings
+.classpath
+.project
+
+.vscode
+
+# Other
+bin
+tmp
+target
+old/

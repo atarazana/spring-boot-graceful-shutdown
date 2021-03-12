@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ${project.artifactId}-${db.type}-configmap
+data:
+  JAVA_OPTIONS: "-Dspring.profiles.active=${profile.name}"
+  TIMEOUT_PER_SHUTDOWN_PHASE: 40s
